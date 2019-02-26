@@ -1,0 +1,9 @@
+Number of tries: 10
+Total number of white beans: 4964
+Total number of black beans: 5036
+Number of times where the last bean was white: 4
+Number of times where the last bean was black: 6
+Total ratio of white beans 49.0
+Total ratio of black beans 50.0
+Ratio of last bean as black 60.0
+Ratio of last bean as white 40.0
