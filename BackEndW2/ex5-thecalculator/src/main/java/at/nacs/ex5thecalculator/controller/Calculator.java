@@ -7,12 +7,9 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class Calculator {
     private final List<Operation> operations;
-
-    public Calculator(List<Operation> operations) {
-        this.operations = operations;
-    }
 
     public double calculate(Expression expression) {
         return operations.stream()
