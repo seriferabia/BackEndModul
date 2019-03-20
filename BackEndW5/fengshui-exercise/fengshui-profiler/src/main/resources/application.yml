@@ -1,0 +1,5 @@
+server:
+  port: 9000
+
+fengshui-api:
+  url: http://localhost:9001

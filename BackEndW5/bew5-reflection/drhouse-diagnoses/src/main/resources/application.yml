@@ -1,0 +1,7 @@
+server:
+  port: 9002
+
+medical:
+  diagnosis:
+    headache: migren
+    stomachache: reflux

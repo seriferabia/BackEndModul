@@ -1,0 +1,28 @@
+server:
+  port: 9001
+
+fengshui:
+  url: https://fengshui-api.com/api/v1/{function}?token=58jR91b2902cI7c7eZ0d2FN81d75b2jmbFbb450d&year={BY}&month={BM}&day={BD}
+  url-sign: https://fengshui-api.com/api/v1/{function}?token=58jR91b2902cI7c7eZ0d2FN81d75b2jmbFbb450d&sign={sign}&sign2={sign2}
+  url-compatibility: https://fengshui-api.com/api/v1/{function}?token=58jR91b2902cI7c7eZ0d2FN81d75b2jmbFbb450d&year={BY}&month={BM}&day={BD}&year2={BY2}&month2={BM2}&day2={BD2}
+
+function:
+  sign-of-year: findChineseSignOfYear
+  sign-compatibility: findSignCompatibility
+  love-compatibility: findLoveCompatibility
+#  business-compatibility: findBusinessCompatibility
+
+chinese:
+  signs:
+    Ox: 1
+    Tiger: 2
+    Rabbit: 3
+    Dragon: 4
+    Snake: 5
+    Horse: 6
+    Goat: 7
+    Monkey: 8
+    Rooster: 9
+    Dog: 10
+    Pig: 11
+    Rat: 12

@@ -1,0 +1,6 @@
+server:
+  port: 9001
+
+response:
+  marco: Polo
+  others: What?

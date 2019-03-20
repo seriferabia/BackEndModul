@@ -1,0 +1,30 @@
+credit-card:
+  issuers:
+    - name: MasterCard
+      startWith: 51, 52, 53, 54, 55
+      notStartWith:
+      lengths: 16
+    - name: Visa
+      startWith: 4
+      notStartWith: 4026, 417500, 4508, 4844, 4913, 4917
+      lengths: 13, 16, 19
+    - name: Visa Electron
+      startWith: 4026, 417500, 4508, 4844, 4913, 4917
+      notStartWith:
+      lengths: 16
+    - name: American Express
+      startWith: 34, 37
+      notStartWith:
+      lengths: 15
+    - name: Discover
+      startWith: 6011, 644, 645, 646, 647, 648, 649, 65
+      notStartWith:
+      lengths: 16, 17, 18
+    - name: Maestro
+      startWith: 5018, 5020, 5038, 5893, 6304, 6759, 6761, 6762, 6763
+      notStartWith:
+      lengths: 16, 17, 18
+    - name: InstaPayment
+      startWith: 637, 638, 639
+      notStartWith:
+      lengths: 16

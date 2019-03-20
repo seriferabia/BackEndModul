@@ -1,0 +1,29 @@
+exercise:
+  word: fantastic
+
+exercise2:
+  number: 369
+
+week:
+  days: monday, tuesday, wednesday, thursday, friday, saturday, sunday
+
+storage:
+  bookshop:
+    HarryPotter: 3
+    TheFoundation: 2
+    TheLordOfTheRings: 4
+
+information:
+  sauna:
+    availableSeats: 5
+    temperature: 36
+
+dancer:
+  ballerinas:
+    - name: dancer1
+      performanceQuality: 3
+    - name: dancer2
+      performanceQuality: 4
+    - name: dancer3
+      performanceQuality: 5
+
