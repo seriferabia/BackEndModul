@@ -1,0 +1,9 @@
+server:
+  port: 9000
+
+cups:
+  urls:
+    0: http://localhost:9001/coin
+    1: http://localhost:9002/coin
+    2: http://localhost:9003/coin
+  amount: 3

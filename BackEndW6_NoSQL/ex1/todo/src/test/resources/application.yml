@@ -1,0 +1,16 @@
+dataset:
+  todos:
+    - title: watch Got
+      done: false
+    - title: watch AttackOnTitan
+      done: false
+    - title: watch OnePunchMan
+      done: false
+  special:
+    title: bake chocolate cake
+    done: false
+
+dataset2:
+  todo:
+    title: watch OnePunchMan
+    done: false

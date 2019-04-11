@@ -1,0 +1,6 @@
+data:
+  persons:
+    - name: bekir
+    - name: serife
+  special:
+    name: hala
