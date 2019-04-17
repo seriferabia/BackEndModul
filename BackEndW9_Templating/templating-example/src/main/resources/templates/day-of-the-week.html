@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <title>Templating</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+
+</head>
+<body>
+
+<h2>Days of the week</h2>
+
+<h4>As an unordered list</h4>
+<ul>
+    <li th:each="dotw: ${daysOfTheWeek}" th:text="${dotw.name}">Day ot the week</li>
+</ul>
+
+
+<h4>As a table</h4>
+<table>
+    <tr>
+        <th>Day of the week</th>
+    </tr>
+    <tr th:each="dotw : ${daysOfTheWeek}">
+        <td th:text="${dotw.name}">Day of the week</td>
+    </tr>
+</table>
+
+</body>
+</html>

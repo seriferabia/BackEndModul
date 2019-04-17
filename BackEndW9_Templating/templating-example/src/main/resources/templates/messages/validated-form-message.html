@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Message</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+
+</head>
+<body>
+
+<h1>Validated Form Message</h1>
+
+<br/><br/>
+<h2>Message to send</h2>
+<form method="post" th:action="@{/message/form/validated}" th:object="${validatedMessage}">
+    <label>Text</label>
+    <input th:field="*{text}" type="text"/>
+    <p th:errors="*{text}" th:if="${#fields.hasErrors('text')}">Incorrect input</p>
+    <br/>
+    <label>Number</label>
+    <input th:field="*{number}" type="number"/>
+    <p th:errors="*{number}" th:if="${#fields.hasErrors('number')}">Incorrect input</p>
+    <br/>
+    <button type="submit">Send message</button>
+</form>
+
+<h2>Message text sent: <span th:text="${validatedMessage.text}">Text</span></h2>
+<h2>Message number sent: <span th:text="${validatedMessage.number}">Number</span></h2>
+
+</body>
+</html>

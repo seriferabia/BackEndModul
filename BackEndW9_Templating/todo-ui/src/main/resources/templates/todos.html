@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Templating</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+
+</head>
+<body>
+
+<h1>You Will Never Forget Again!</h1>
+
+<h2>Add new ToDo</h2>
+<form method="post" th:action="@{/}" th:object="${toDo}">
+    <label style="font-size: large"> New ToDo:</label>
+    <input th:field="*{title}" type="text">
+    <p th:errors="*{title}" th:if="${#fields.hasErrors('title')}">Incorrect input</p>
+    <br/>
+    <button type="submit">Add ToDo</button>
+</form>
+
+
+<h2>All ToDos</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Done</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="toDo : ${toDos} ">
+        <td th:text="${toDo.title}">Title</td>
+        <td th:if="${toDo.done == false}">
+            <form method="post" th:action="@{/done}" th:object="${toDo}">
+                <input name="id" th:value="${toDo.id}" type="hidden"/>
+                <button>Done</button>
+            </form>
+        </td>
+        <td th:if="${toDo.done == true}">Done!</td>
+        <td>
+            <form method="post" th:action="@{/delete}" th:object=" ${city}">
+                <input name="id" th:value="${toDo.id}" type="hidden"/>
+                <button>Delete</button>
+            </form>
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>

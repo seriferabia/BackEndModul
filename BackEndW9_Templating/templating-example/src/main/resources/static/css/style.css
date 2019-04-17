@@ -1,0 +1,10 @@
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: lightpink;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}

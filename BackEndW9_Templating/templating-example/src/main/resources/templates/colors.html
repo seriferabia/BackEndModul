@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <title>Templating</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+
+</head>
+
+<body>
+
+<h2>Colors</h2>
+<table>
+    <tr>
+        <th>Color</th>
+        <th>Rating</th>
+    </tr>
+
+    <tr th:each="color : ${colors}">
+        <td th:text="${color.name}">Name</td>
+        <td th:text="${color.rating}">Rating</td>
+    </tr>
+</table>
+
+<h2>Add new color</h2>
+<form method="post" th:action="@{/colors}" th:object="${color}">
+    <label> Name: </label>
+    <input th:field="*{name}" type="text"/>
+    <p th:errors="*{name}" th:if="${#fields.hasErrors('name')}">Incorrect input</p>
+    <br/>
+    <label> Rating: </label>
+    <input th:field="*{rating}" type="number"/>
+    <p th:errors="*{rating}" th:if="${#fields.hasErrors('rating')}">Incorrect input</p>
+    <br/>
+    <button type="submit">Add color</button>
+</form>
+
+
+</body>
+
+</html>

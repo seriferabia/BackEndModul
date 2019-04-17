@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Templating</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+
+</head>
+<body>
+
+<h2>Add New City</h2>
+<form method="post" th:action="@{/cities}" th:object="${city}">
+    Write the name of the city that you want to add:<br/>
+    <input th:field="*{name}" type="text">
+    <p th:errors="*{name}" th:if="${#fields.hasErrors('name')}">Incorrect input</p>
+    <br/>
+    <button type="submit">Add city</button>
+</form>
+
+<h2>Cities</h2>
+<table>
+    <tr>
+        <th>City</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="city : ${cities} ">
+        <td th:text="${city.name}">Name</td>
+        <td>
+            <form method="post" th:action="@{/cities/delete}">
+                <input name="name" th:value="${city.name}" type="hidden"/>
+                <button>Delete</button>
+            </form>
+        </td>
+
+    </tr>
+</table>
+
+
+</body>
+</html>
