@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Security</title>
+</head>
+<body>
+<h1>Thymeleaf security in memory</h1>
+<p>You logged in... So What??? What do you want ??</p>
+<form method="post" th:action="@{/logout}">
+    <button>Sign Out</button>
+</form>
+</body>
+</html>

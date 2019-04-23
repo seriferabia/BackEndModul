@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Security</title>
+</head>
+<body>
+<h1>Thymeleaf security in memory</h1>
+<h2>Admin page</h2>
+<p>This is the admin page</p>
+<form method="post" th:action="@{/logout}">
+    <button>Sign Out</button>
+</form>
+<br/>
+<br/>
+<a th:href="@{/}">Go to home page</a>
+<a th:href="@{/user}">Go to user page</a>
+</body>
+</html>
