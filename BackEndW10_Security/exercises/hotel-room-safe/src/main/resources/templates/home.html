@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Security</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+</head>
+<body>
+<h1>Hotel Room Safe</h1>
+<h2>You are safe with us!</h2>
+<form method="post" th:action="@{/logout}">
+    <button>Leave Safely</button>
+</form>
+</body>
+</html>
