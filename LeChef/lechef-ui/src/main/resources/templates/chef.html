@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>LeChef</title>
+
+    <meta charset="UTF-8"/>
+
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css"/>
+
+</head>
+<body>
+
+<h1>Welcome CHEF!</h1>
+<h3>Please add new delicious recipes</h3>
+
+<h2>Submit Ingredients</h2>
+<form method="post" th:action="@{/chef/ingredient}" th:object="${ingredient}">
+    <label>Name :</label>
+    <input th:field="*{name}" type="text"/>
+    <br>
+    <label>Amount :</label>
+    <input th:field="*{amount}" type="number"/>
+    <br>
+    <label>Unit :</label>
+    <input th:field="*{unit}" type="text"/>
+    <br>
+    <button type="submit">Submit Ingredient</button>
+</form>
+
+<h2>Saved Ingredients</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Unit</th>
+    </tr>
+
+    <tr th:each="ingredient : ${ingredients}">
+        <td th:text="${ingredient.name}">Name</td>
+        <td th:text="${ingredient.amount}">Amount</td>
+        <td th:text="${ingredient.unit}">Unit</td>
+    </tr>
+</table>
+
+<h2>Submit Detail Information</h2>
+<form method="post" th:action="@{/chef}" th:object="${recipe}">
+    <label>Name :</label>
+    <input th:field="*{name}" type="text"/>
+    <br>
+    <label>Type :</label>
+    <input th:field="*{type}" type="text"/>
+    <br>
+    <label>Label :</label>
+    <input th:field="*{label}" type="text"/>
+    <br>
+    <label>Origin :</label>
+    <input th:field="*{origin}" type="text"/>
+    <br>
+    <button id="button01" type="submit">Save Recipe</button>
+</form>
+
+
+</body>
+</html>
