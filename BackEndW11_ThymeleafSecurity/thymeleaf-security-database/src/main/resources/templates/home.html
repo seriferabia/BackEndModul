@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Security</title>
+</head>
+<body>
+<h1>Thymeleaf security database</h1>
+<h1>
+    Welcome, <u><span th:text="${principal.user.name}">name</span></u>
+</h1>
+<p>Your username is: <span th:text="${principal.username}">username</span></p>
+<p>Your authorities are: <span th:text="${principal.user.authorities}">authorities</span></p>
+<form method="post" th:action="@{/logout}">
+    <button>Sign Out</button>
+</form>
+</body>
+</html>
