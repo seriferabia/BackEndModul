@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+
+<h1>Participants</h1>
+<p>Hello, <span th:text="${user.username}">Company</span></p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Participant Name</th>
+        <th>Interested</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="participant : ${participants}">
+        <td th:text="${participant.name}">Guillermo</td>
+        <td>
+            <form th:unless="${interestedParticipants.contains(participant)}" th:action="@{/interested/{id}(id=${participant.id})}" method="post">
+                <button type="submit">I'm interested</button>
+            </form>
+            <form th:if="${interestedParticipants.contains(participant)}" th:action="@{/notinterested/{id}(id=${participant.id})}" method="post">
+                <button type="submit">I'm not interested</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+<br/><br/>
+
+<h3>Interested participants</h3>
+<ul>
+    <li th:each="interested : ${interestedParticipants}" th:text="${interested.name}">Guillermo</li>
+</ul>
+
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>
