@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Codiattis</title>
+</head>
+<body>
+
+<h1>Members of Codiattis Secret Order</h1>
+<!--<p>Hello, <span th:text="${member.username}">Member</span></p>-->
+
+<table>
+    <thead>
+    <tr>
+        <th th:if="${member.isAdmin}">Invite New Members!</th>
+        <th th:unless="${member.isAdmin}">All Secret Members!</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:if="${member.isAdmin}">
+            <form method="post" th:action="@{/}" th:object="${member}">
+                <label>Username :</label>
+                <input autofocus="autofocus" placeholder="Username" th:field="*{username}" type="text" onfocus="this.value=''"/>
+                <label>Password :</label>
+                <input placeholder="Password" th:field="*{password}" type="password"/>
+                <br>
+                <br>
+                <button type="submit">Invite Member</button>
+            </form>
+        </td>
+        <td th:unless="${member.isAdmin}">
+            <ul>
+                <li th:each="member : ${members}" th:text="${member.username}">Member</li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+<br>
+<br>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>

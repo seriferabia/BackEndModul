@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/secret_organization?useSSL=false
+    username: member
+    password: serife
+
+  jpa:
+    hibernate:
+      ddl-auto: update
