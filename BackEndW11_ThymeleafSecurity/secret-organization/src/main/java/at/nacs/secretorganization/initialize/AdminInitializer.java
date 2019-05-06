@@ -11,14 +11,14 @@ import java.util.Set;
 
 @Configuration
 public class AdminInitializer {
+
   @Bean
   ApplicationRunner initializeAdmin(MemberRepository repository, PasswordEncoder encoder) {
     return args -> {
       Member admin = Member.builder()
                            .username("chief")
-                           .password(encoder.encode("serife"))
-                           .isAdmin(true)
-                           .authorities(Set.of("ADMIN"))
+                           .password(encoder.encode("chief"))
+                           .authorities(Set.of("ROLE_ADMIN"))
                            .build();
       if (repository.existsByUsername(admin.getUsername())) {
         return;

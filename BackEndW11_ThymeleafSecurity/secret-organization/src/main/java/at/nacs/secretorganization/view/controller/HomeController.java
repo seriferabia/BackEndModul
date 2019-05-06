@@ -3,9 +3,9 @@ package at.nacs.secretorganization.view.controller;
 import at.nacs.secretorganization.logic.MemberModifier;
 import at.nacs.secretorganization.persistence.model.Member;
 import at.nacs.secretorganization.persistence.repository.MemberRepository;
+import at.nacs.secretorganization.security.UserPrincipal;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,15 +24,13 @@ public class HomeController {
   private final MemberRepository repository;
   private final MemberModifier modifier;
 
-  @Autowired
-  PasswordEncoder encoder;
 
   @GetMapping
   String page() {
     return "home";
   }
 
-  @RolesAllowed("ADMIN")
+  @RolesAllowed("ROLE_ADMIN")
   @PostMapping
   String post(@Valid Member member, BindingResult result) {
     if (result.hasErrors()) {
@@ -42,8 +40,23 @@ public class HomeController {
     return "redirect:/";
   }
 
+  @ModelAttribute("member")
+  Member member() {
+    return new Member();
+  }
+
   @ModelAttribute("members")
   List<Member> members() {
     return repository.findAll();
+  }
+
+  @ModelAttribute("isAdmin")
+  boolean isAdmin(@AuthenticationPrincipal UserPrincipal principal) {
+    return principal.getMember().getAuthorities().contains("ROLE_ADMIN");
+  }
+
+  @ModelAttribute("loggedMember")
+  String loggedUserName(@AuthenticationPrincipal UserPrincipal principal) {
+    return principal.getMember().getUsername();
   }
 }
