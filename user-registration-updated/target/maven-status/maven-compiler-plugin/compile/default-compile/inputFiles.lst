@@ -1,0 +1,13 @@
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/controller/UserController.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/service/EmailSenderService.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/validator/EmailVerifier.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/persistence/repository/ConfirmationTokenRepository.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/configuration/WebMvcConfiguration.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/validator/ValidEmail.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/persistence/repository/UserRepository.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/persistence/model/User.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/controller/UserAccountController.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/logic/MailParser.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/persistence/model/ConfirmationToken.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/configuration/SecurityConfiguration.java
+/home/serife/IdeaProjects/user-registration/src/main/java/at/nacs/userregistration/UserRegistrationApplication.java
