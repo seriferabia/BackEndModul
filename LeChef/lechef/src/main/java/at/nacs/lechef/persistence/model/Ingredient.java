@@ -15,6 +15,7 @@ import java.util.Objects;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(exclude = "id")
 public class Ingredient {
   @Id
   @GeneratedValue
@@ -27,19 +28,4 @@ public class Ingredient {
   private String unit;
 
   private boolean bought;
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Ingredient that = (Ingredient) o;
-    return Double.compare(that.amount, amount) >= 0 &&
-        Objects.equals(name, that.name) &&
-        Objects.equals(unit, that.unit);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, amount, unit);
-  }
 }
