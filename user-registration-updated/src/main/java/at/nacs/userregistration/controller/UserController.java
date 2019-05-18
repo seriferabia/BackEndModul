@@ -30,7 +30,7 @@ public class UserController {
 
   @ModelAttribute("message")
   String message() {
-    return "This email already exists!";
+    return "This email already exists! Please enter a validate email."";
   }
 
   @ModelAttribute("linkErrorMessage")
