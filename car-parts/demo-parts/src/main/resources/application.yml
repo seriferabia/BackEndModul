@@ -1,0 +1,6 @@
+server:
+  port: 9090
+
+carparts:
+  url: https://datasn.io/data/api/v1/n3.datasn.io/n3_chennan/european_auto_parts/main/list/?client_key=hwZBKc3if7MVhVcE7JmdHEwQWcdmcU60QDNBma2v&where%5B0%5D%5B0%5D=auto_part.title&where%5B0%5D%5B1%5D=%3D&where%5B0%5D%5B2%5D={title}&app=json&order_by=id%2C%20ASC&limit=10000&manifest=row&tables=auto_part
+
